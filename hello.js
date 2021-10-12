@@ -12,7 +12,7 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("hello-world-english");
+  res.redirect("/english");
 });
 
 app.get("/english", (req, res) => {
