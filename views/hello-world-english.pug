@@ -5,8 +5,26 @@ html
     meta(charset="UTF-8")
     link(rel="stylesheet", href="/stylesheets/application.css")
   body
+    nav 
+      ul 
+        li 
+          a.current(href="/english")
+            img.flag(src="/images/us-flag.png" 
+                    alt="US Flag" 
+                    title="Go to US English site")
+        li 
+          a(href="/french")
+            img.flag(src="/images/french-flag.png"
+                     alt="Drapeau de la france"
+                     title="Aller sur le site français")
+        li 
+          a(href="/serbian")
+            img.flag(src="/images/serbian-flag.png"
+                     alt="Застава Србије"
+                     title="Идите на српски сајт")
     header
       h1 Hello World!
     main
       p I am going to be a software engineer soon!
       img(src="/images/earth.jpg" alt="The Earth" title="The Earth")
+    

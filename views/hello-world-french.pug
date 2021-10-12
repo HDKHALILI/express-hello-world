@@ -7,6 +7,23 @@ html
     link(rel="stylesheet" href="/stylesheets/application.css")
 
   body 
+    nav 
+      ul 
+        li 
+          a(href="/english")
+            img.flag(src="/images/us-flag.png" 
+                     alt="US Flag" 
+                     title="Go to US English site")
+        li 
+          a.current(href="/french")
+            img.flag(src="/images/french-flag.png"
+                     alt="Drapeau de la france"
+                     title="Aller sur le site français")
+        li 
+          a(href="/serbian")
+            img.flag(src="/images/serbian-flag.png"
+                     alt="Застава Србије"
+                     title="Идите на српски сајт")
     header 
       h1 Bonjour le monde! 
     main 
