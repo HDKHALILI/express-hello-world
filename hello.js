@@ -26,24 +26,28 @@ app.get("/", (req, res) => {
 app.get("/english", (req, res) => {
   res.render("hello-world-english", {
     currentPath: req.path,
+    language: "en-US",
   });
 });
 
 app.get("/french", (req, res) => {
   res.render("hello-world-french", {
     currentPath: req.path,
+    language: "fr-FR",
   });
 });
 
 app.get("/serbian", (req, res) => {
   res.render("hello-world-serbian", {
     currentPath: req.path,
+    language: "sr-Cyrl-rs",
   });
 });
 
 app.get("/spanish", (req, res) => {
   res.render("hello-world-spanish", {
     currentPath: req.path,
+    language: "es-ES",
   });
 });
 
