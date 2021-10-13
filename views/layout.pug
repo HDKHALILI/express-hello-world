@@ -9,22 +9,22 @@ html(lang="en")
     nav 
       ul 
         li 
-          a(href="/english" class=currentLinkIsEnglish)
+          a(href="/english" class=currentPathClass('/english', currentPath))
             img.flag(src="/images/us-flag.png" 
                     alt="US Flag" 
                     title="Go to US English site")
         li 
-          a(href="/french" class=currentLinkIsFrench)
+          a(href="/french" class=currentPathClass('/french', currentPath))
             img.flag(src="/images/french-flag.png"
                       alt="Drapeau de la france"
                       title="Aller sur le site français")
         li 
-          a(href="/serbian" class=currentLinkIsSerbian)
+          a(href="/serbian" class=currentPathClass('/serbian', currentPath))
             img.flag(src="/images/serbian-flag.png"
                       alt="Застава Србије"
                       title="Идите на српски сајт")
         li 
-          a(href="/spanish" class=currentLinkIsSpanish)
+          a(href="/spanish" class=currentPathClass('/spanish', currentPath))
             img.flag(src="/images/spain-flag.png"
                       alt="bandera de españa"
                       title="ir al sitio en español")

@@ -13,31 +13,37 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 app.use(morgan("common"));
 
+// setting a view helper function, currentPathClass
+// will be available to every view
+app.locals.currentPathClass = (path, currentPath) => {
+  return path === currentPath ? "current" : "";
+};
+
 app.get("/", (req, res) => {
   res.redirect("/english");
 });
 
 app.get("/english", (req, res) => {
   res.render("hello-world-english", {
-    currentLinkIsEnglish: "current",
+    currentPath: req.path,
   });
 });
 
 app.get("/french", (req, res) => {
   res.render("hello-world-french", {
-    currentLinkIsFrench: "current",
+    currentPath: req.path,
   });
 });
 
 app.get("/serbian", (req, res) => {
   res.render("hello-world-serbian", {
-    currentLinkIsSerbian: "current",
+    currentPath: req.path,
   });
 });
 
 app.get("/spanish", (req, res) => {
   res.render("hello-world-spanish", {
-    currentLinkIsSpanish: "current",
+    currentPath: req.path,
   });
 });
 
