@@ -3,29 +3,6 @@ extends layout
 block pageTitle 
   title Ceci est le titre de la page 
 
-block navigationLinks
-  nav 
-    ul 
-      li 
-        a(href="/english" class=currentLinkIsEnglish)
-          img.flag(src="/images/us-flag.png" 
-                  alt="US Flag" 
-                  title="Go to US English site")
-      li 
-        a(href="/french" class=currentLinkIsFrench)
-          img.flag(src="/images/french-flag.png"
-                    alt="Drapeau de la france"
-                    title="Aller sur le site français")
-      li 
-        a(href="/serbian" class=currentLinkIsSerbian)
-          img.flag(src="/images/serbian-flag.png"
-                    alt="Застава Србије"
-                    title="Идите на српски сајт")
-      li 
-        a(href="/spanish" class=currentLinkIsSpanish)
-          img.flag(src="/images/spain-flag.png"
-                    alt="bandera de españa"
-                    title="ir al sitio en español")
 block greeting
   h1 Bonjour le monde!
 
