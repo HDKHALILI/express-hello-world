@@ -1,36 +1,34 @@
-doctype html 
+extends layout 
 
-html(lang="sr-Cyrl-CS")
-  head 
-    title Ово је наслов странице
-    meta(charset="UTF-8")
-    link(rel="stylesheet" href="/stylesheets/application.css")
+block pageTitle
+  title Ово је наслов странице
 
-  body 
-    nav 
-      ul 
-        li 
-          a(href="/english")
-            img.flag(src="/images/us-flag.png" 
-                    alt="US Flag" 
-                    title="Go to US English site")
-        li 
-          a(href="/french")
-            img.flag(src="/images/french-flag.png"
-                     alt="Drapeau de la france"
-                     title="Aller sur le site français")
-        li 
-          a.current(href="/serbian")
-            img.flag(src="/images/serbian-flag.png"
-                     alt="Застава Србије"
-                     title="Идите на српски сајт")
-        li 
-          a(href="/spanish")
-            img.flag(src="/images/spain-flag.png"
-                     alt="bandera de españa"
-                     title="ir al sitio en español")
-    header 
-      h1 Здраво свете!
-    main
-      p Ускоро ћу бити софтверски инжењер!
-      img(src="/images/earth.jpg" alt="Планета Земља" title="Планета Земља")
+block navigationLinks
+  nav 
+    ul 
+      li 
+        a(href="/english")
+          img.flag(src="/images/us-flag.png" 
+                  alt="US Flag" 
+                  title="Go to US English site")
+      li 
+        a(href="/french")
+          img.flag(src="/images/french-flag.png"
+                    alt="Drapeau de la france"
+                    title="Aller sur le site français")
+      li 
+        a.current(href="/serbian")
+          img.flag(src="/images/serbian-flag.png"
+                    alt="Застава Србије"
+                    title="Идите на српски сајт")
+      li 
+        a(href="/spanish")
+          img.flag(src="/images/spain-flag.png"
+                    alt="bandera de españa"
+                    title="ir al sitio en español")
+block greeting
+  h1 Здраво свете!
+
+block softwareEngineer
+  p Ускоро ћу бити софтверски инжењер!
+  img(src="/images/earth.jpg" alt="Планета Земља" title="Планета Земља")

@@ -1,36 +1,34 @@
-doctype html 
+extends layout
 
-html(lang="es-ES")
-  head 
-    title Hola Mundo! 
-    meta(charset="UTF-8")
-    link(rel="stylesheet", href="/stylesheets/application.css")
-  
-  body 
-    nav 
-      ul 
-        li 
-          a(href="/english")
-            img.flag(src="/images/us-flag.png" 
-                    alt="US Flag" 
-                    title="Go to US English site")
-        li 
-          a(href="/french")
-            img.flag(src="/images/french-flag.png"
-                     alt="Drapeau de la france"
-                     title="Aller sur le site français")
-        li 
-          a(href="/serbian")
-            img.flag(src="/images/serbian-flag.png"
-                     alt="Застава Србије"
-                     title="Идите на српски сајт")
-        li 
-          a.current(href="/spanish")
-            img.flag(src="/images/spain-flag.png"
-                     alt="bandera de españa"
-                     title="ir al sitio en español")
-    header
-      h1 Hola Mundo!
-    main
-      p Pronto seré ingeniero de software!
-      img(src="/images/earth.jpg" alt="La tierra" title="La tierra")
+block pageTitle
+  title Hola Mundo! 
+
+block navigationLinks
+  nav 
+    ul 
+      li 
+        a(href="/english")
+          img.flag(src="/images/us-flag.png" 
+                  alt="US Flag" 
+                  title="Go to US English site")
+      li 
+        a(href="/french")
+          img.flag(src="/images/french-flag.png"
+                    alt="Drapeau de la france"
+                    title="Aller sur le site français")
+      li 
+        a(href="/serbian")
+          img.flag(src="/images/serbian-flag.png"
+                    alt="Застава Србије"
+                    title="Идите на српски сајт")
+      li 
+        a.current(href="/spanish")
+          img.flag(src="/images/spain-flag.png"
+                    alt="bandera de españa"
+                    title="ir al sitio en español")
+block greeting
+  h1 Hola Mundo!
+
+block softwareEngineer
+  p Pronto seré ingeniero de software!
+  img(src="/images/earth.jpg" alt="La tierra" title="La tierra")

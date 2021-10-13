@@ -1,10 +1,6 @@
-doctype html
-html(lang="en")
-  head
-    title Hello World!
-    meta(charset="UTF-8")
-    link(rel="stylesheet", href="/stylesheets/application.css")
-  body
+extends layout
+
+block navigationLinks
     nav 
       ul 
         li 
@@ -27,9 +23,7 @@ html(lang="en")
             img.flag(src="/images/spain-flag.png"
                      alt="bandera de españa"
                      title="ir al sitio en español")
-    header
-      h1 Hello World!
-    main
-      p I am going to be a software engineer soon!
-      img(src="/images/earth.jpg" alt="The Earth" title="The Earth")
+block softwareEngineer
+  p I am going to be a software engineer soon!
+  img(src="/images/earth.jpg" alt="The Earth" title="The Earth")
     
