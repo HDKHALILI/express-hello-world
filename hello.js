@@ -52,13 +52,23 @@ app.locals.currentPathClass = (path, currentPath) => {
   return path === currentPath ? "current" : "";
 };
 
+app.get("/", (req, res) => {
+  res.redirect("/english");
+});
+
 app.get("/:language", (req, res) => {
   const language = req.params.language;
-  res.render(`hello-world-${language}`, {
-    countries: COUNTRY_DATA,
-    currentPath: req.path,
-    lanuage: LANGUAGE_CODES[language],
-  });
+  const languageCode = LANGUAGE_CODES[language];
+
+  if (!languageCode) {
+    res.status(404).send(`Language not supported: ${language}`);
+  } else {
+    res.render(`hello-world-${language}`, {
+      countries: COUNTRY_DATA,
+      currentPath: req.path,
+      lanuage: languageCode,
+    });
+  }
 });
 
 app.listen(3000, "localhost", () => {
