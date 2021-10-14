@@ -29,6 +29,13 @@ const COUNTRY_DATA = [
   },
 ];
 
+const LANGUAGE_CODES = {
+  english: "en-US",
+  french: "fr-FR",
+  serbian: "sr-Cryl-rs",
+  spanish: "es-SP",
+};
+
 // where to look for views
 app.set("views", "./views");
 
@@ -45,24 +52,14 @@ app.locals.currentPathClass = (path, currentPath) => {
   return path === currentPath ? "current" : "";
 };
 
-const helloWorld = (view, language) => {
-  return (req, res) => {
-    res.render(view, {
-      countries: COUNTRY_DATA,
-      currentPath: req.path,
-      language: language,
-    });
-  };
-};
-
-app.get("/", (req, res) => {
-  res.redirect("/english");
+app.get("/:language", (req, res) => {
+  const language = req.params.language;
+  res.render(`hello-world-${language}`, {
+    countries: COUNTRY_DATA,
+    currentPath: req.path,
+    lanuage: LANGUAGE_CODES[language],
+  });
 });
-
-app.get("/english", helloWorld("hello-world-english", "en-US"));
-app.get("/french", helloWorld("hello-world-french", "fr-FR"));
-app.get("/serbian", helloWorld("hello-world-serbian", "sr-Cyrl-rs"));
-app.get("/spanish", helloWorld("hello-world-spanish", "es-SP"));
 
 app.listen(3000, "localhost", () => {
   console.log("Listening on port 3000");
