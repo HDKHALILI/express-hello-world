@@ -56,6 +56,10 @@ app.get("/", (req, res) => {
   res.redirect("/english");
 });
 
+app.get("/favicon.ico", (req, res) => {
+  res.status(404).send("no favicon");
+});
+
 app.get("/:language", (req, res, next) => {
   const language = req.params.language;
   const languageCode = LANGUAGE_CODES[language];
